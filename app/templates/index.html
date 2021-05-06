@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Sign in</title>
+  </head>
+  <body>
+    <script src="static/js/fb_sdk.js"></script>
+    <script src="static/js/fb_login.js"></script>
+
+    <fb:login-button
+      scope="public_profile,email"
+      onlogin="checkLoginState();">
+    </fb:login-button>
+    <form action={{url_for("index")}} method="POST">
+      <p style="color:red;">{{error}}</p>
+      <div class="form-group">
+          <label for="InputUser">User Name</label>
+          <input type="text" name="username" id="username" placeholder="username">
+      </div>
+      <div class="form-group">
+          <label for="InputPassword">Password</label>
+          <input type="password"  name="password" id="password" placeholder="password">
+      </div>
+      <button type="submit">Login</button>
+      <button type="button" onclick="location.replace('/register')">Register</button>
+    </form>
+  </body>
+</html>
