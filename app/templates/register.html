@@ -11,7 +11,7 @@
       onlogin="checkLoginState();">
     </fb:login-button>
     <button type="button" onclick="location.replace('https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1655960805&redirect_uri=https://localhost&state=test1234&scope=profile%20openid')"> Line Login</button>
-    <form action={{url_for("login")}} method="POST">
+    <form action={{url_for("register")}} method="POST">
       <p style="color:red;">{{error}}</p>
       <div class="form-group">
           <label for="InputUser">User Name</label>
@@ -21,8 +21,7 @@
           <label for="InputPassword">Password</label>
           <input type="password"  name="password" id="password" placeholder="password">
       </div>
-      <button type="submit">Login</button>
-      <button type="button" onclick="location.replace('/register')">Register</button>
+      <button type="submit">Register</button>
     </form>
   </body>
 </html>
